@@ -5,6 +5,7 @@ class Client(models.Model):
     name = models.CharField(max_length=100)
     address = models.TextField()
     phoneNumber = models.IntegerField()
+    postalCode = models.TextField()
 
     def __str__(self):
         return self.name
@@ -18,6 +19,7 @@ class Equipment(models.Model):
    receivedDate = models.DateTimeField()
    status = models.TextField()
    documentNumber = models.TextField()
+   warranty = models.BooleanField()
    client = models.ForeignKey(Client, related_name='equipments', on_delete=models.CASCADE)
 
    def __str__(self):
