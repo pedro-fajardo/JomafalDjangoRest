@@ -13,7 +13,9 @@ class EquipmentGetSerializer(serializers.ModelSerializer):
         model = Equipment
         fields = '__all__'
 
-class EquipmentPostSerializer(serializers.ModelSerializer):    
+class EquipmentPostSerializer(serializers.ModelSerializer):
+    observations = serializers.CharField(required=False, allow_blank=True)
+    
     class Meta:
         model = Equipment
         fields = '__all__'
